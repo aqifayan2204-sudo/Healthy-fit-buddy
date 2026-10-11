@@ -12,7 +12,7 @@ st.set_page_config(
 
 # Tajuk Utama
 st.title("✨ HEALTHY FIT BUDDY ✨")
-st.subheader("🏃‍♂️    RAKAN DIGITAL GAYA HIDUP SIHAT KAMU 🧘‍♀️")
+st.subheader("🏃‍♂️    RAKAN DIGITAL GAYA HIDUP SIHAT ANDA 🧘‍♀️")
 st.markdown("---")
 
 # Menu Navigasi di Sidebar
@@ -49,7 +49,7 @@ if pilihan_menu == "1. Kira BMI":
         tinggi_m = tinggi_cm / 100
         bmi = berat / (tinggi_m ** 2)
 
-        st.metric(label="Skor BMI Kamu", value=f"{bmi:.2f}")
+        st.metric(label="Skor BMI Anda", value=f"{bmi:.2f}")
 
         if bmi < 18.5:
             status = "Terlalu Kurus / Underweight 🦴"
@@ -83,7 +83,7 @@ elif pilihan_menu == "2. Kira Kalori Harian (BMR & TDEE)":
     with col3:
         tinggi = st.number_input("👉 Tinggi (cm):", min_value=30.0, max_value=250.0, value=170.0)
 
-    st.write("⚡ **Pilih Tahap Aktiviti Harian Kamu:**")
+    st.write("⚡ **Pilih Tahap Aktiviti Harian Anda:**")
     aktiviti_dict = {
         "🛋️ Rendah (Banyak duduk / jarang senaman)": 1.2,
         "🚶‍♂️ Sederhana (Senaman ringan 1-3 hari/minggu)": 1.375,
@@ -120,13 +120,13 @@ elif pilihan_menu == "2. Kira Kalori Harian (BMR & TDEE)":
 elif pilihan_menu == "3. Target Air Minum":
     st.header("💧 3. Target Air Minum Harian")
     
-    berat = st.number_input("👉 Masukkan berat badan kamu (kg):", min_value=1.0, max_value=300.0, value=60.0)
+    berat = st.number_input("👉 Masukkan berat badan anda (kg):", min_value=1.0, max_value=300.0, value=60.0)
 
     if st.button("Kira Sasaran Air"):
         sasaran_ml = berat * 35
         sasaran_liter = sasaran_ml / 1000
 
-        st.success(f"💦 **Sasaran Air Harian Kamu:** ~{sasaran_liter:.2f} Liter ({sasaran_ml:.0f} ml)")
+        st.success(f"💦 **Sasaran Air Harian Anda:** ~{sasaran_liter:.2f} Liter ({sasaran_ml:.0f} ml)")
         
         st.markdown("### 🗓️ Cadangan Jadual Minum Air (8 Gelas Sehari):")
         jadual = [
@@ -185,7 +185,7 @@ elif pilihan_menu == "4. Rutin & Pemasa Senaman Express":
 
         status_text.empty()
         st.balloons()
-        st.success("🎉 Tahniah kamu! Berjaya habiskan rutin senaman hari ini! 🔥🥳")
+        st.success("🎉 Tahniah anda! Berjaya habiskan rutin senaman hari ini! 🔥🥳")
 
 # -----------------------------------------------------------------------------
 # 5. KALKULATOR WAKTU TIDUR
@@ -194,7 +194,7 @@ elif pilihan_menu == "5. Kalkulator Waktu Tidur Optima":
     st.header("🌙 5. Kalkulator Waktu Tidur Optima")
     st.info("💡 1 Kitaran tidur mengambil masa ~90 minit.\n\n💡 Tidur yang segar perlukan 5-6 kitaran penuh (~7.5 - 9 jam).")
 
-    waktu_bangun_input = st.time_input("👉 Pukul berapa kamu ingin bangun esok?", datetime.strptime("06:30", "%H:%M").time())
+    waktu_bangun_input = st.time_input("👉 Pukul berapa anda ingin bangun esok?", datetime.strptime("06:30", "%H:%M").time())
 
     if st.button("Kira Waktu Tidur"):
         waktu_bangun = datetime.combine(datetime.today(), waktu_bangun_input)
@@ -241,7 +241,7 @@ elif pilihan_menu == "7. Cadangan Aktiviti Harian":
     st.header("🏃 7. Cadangan Aktiviti Harian")
     
     pilihan = st.radio(
-        "Pilih aktiviti yang kamu nak buat:",
+        "Pilih aktiviti yang anda nak buat:",
         ["🚶 Jalan Kaki", "🏃 Jogging", "🚴 Berbasikal", "🧘 Stretching"]
     )
 
@@ -265,14 +265,14 @@ elif pilihan_menu == "8. Mood Check Harian":
     st.header("😊 8. Mood Check Harian")
     
     pilihan = st.select_slider(
-        "Bagaimana mood kamu hari ini?",
+        "Bagaimana mood anda hari ini?",
         options=["😭 Sangat tidak baik", "😕 Kurang baik", "😐 Biasa", "🙂 Baik", "😁 Sangat baik"],
         value="😐 Biasa"
     )
 
     respons = {
-        "😭 Sangat tidak baik": ("😭 Mood sangat rendah", "Cuba berehat seketika, tarik nafas perlahan dan lakukan aktiviti yang membuat kamu rasa tenang."),
-        "😕 Kurang baik": ("😕 Mood kurang baik", "Ambil sedikit masa untuk berehat dan buat sesuatu yang kamu suka."),
+        "😭 Sangat tidak baik": ("😭 Mood sangat rendah", "Cuba berehat seketika, tarik nafas perlahan dan lakukan aktiviti yang membuat anda rasa tenang."),
+        "😕 Kurang baik": ("😕 Mood kurang baik", "Ambil sedikit masa untuk berehat dan buat sesuatu yang anda suka."),
         "😐 Biasa": ("😐 Mood biasa", "Tak apa! Cuba kekalkan rutin yang baik dan teruskan aktiviti harian."),
         "🙂 Baik": ("🙂 Mood baik", "Mantap! Kekalkan mood positif dengan aktiviti sihat."),
         "😁 Sangat baik": ("😁 Mood sangat baik", "Yay! Teruskan vibe positif dan kongsikan tenaga baik dengan orang sekeliling!")
@@ -318,8 +318,8 @@ elif pilihan_menu == "10. Cabaran Gaya Hidup Sihat":
 
     if pilihan == "💧 Minum Air Secukupnya":
         st.markdown("### 💧 CABARAN AIR")
-        st.write("📌 **Sasaran:** Cuba pastikan kamu minum air dengan kerap sepanjang hari.")
-        st.write("💡 **Tip:** Bawa botol air bersama kamu.")
+        st.write("📌 **Sasaran:** Cuba pastikan anda minum air dengan kerap sepanjang hari.")
+        st.write("💡 **Tip:** Bawa botol air bersama anda.")
         st.video("https://www.youtube.com/watch?v=9iMGFqMmUFs")
 
     elif pilihan == "👟 Jalan 5,000 Langkah":
@@ -392,7 +392,7 @@ elif pilihan_menu == "10. Cabaran Gaya Hidup Sihat":
             video_box.empty()
             
             st.balloons()
-            st.success("🎉 Tahniah kamu! Berjaya melengkapkan 1 pusingan senaman 5 minit! Ulang sekali lagi untuk cukupkan 10 minit! 🔥🥳")
+            st.success("🎉 Tahniah anda! Berjaya melengkapkan 1 pusingan senaman 5 minit! Ulang sekali lagi untuk cukupkan 10 minit! 🔥🥳")
 
 # Footer
 st.sidebar.markdown("---")
